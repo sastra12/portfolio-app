@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/admin/logout', [AdminController::class, 'logout'])
+    ->name('admin.logout');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
