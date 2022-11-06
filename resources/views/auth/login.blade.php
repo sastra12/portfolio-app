@@ -41,23 +41,29 @@
                     </div>
 
                     <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
-
                     <div class="p-3">
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
                             @csrf
-
-
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" id="username" name="username" type="text"
-                                        required="" placeholder="Username">
+                                        placeholder="Username" value="{{ old('username') }}">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" name="password" id="password" type="password"
-                                        required="" placeholder="Password">
+                                        placeholder="Password">
                                 </div>
                             </div>
 

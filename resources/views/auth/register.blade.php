@@ -43,41 +43,50 @@
                     <h4 class="text-muted text-center font-size-18"><b>Register</b></h4>
 
                     <div class="p-3">
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" id="name" type="text" name="name"
-                                        required="" placeholder="Name">
+                                        placeholder="Name">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" id="username" type="text" name="username"
-                                        required="" placeholder="Username">
+                                        placeholder="Username">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" id="email" type="email" name="email"
-                                        required="" placeholder="Email">
+                                        placeholder="Email">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" id="password" name="password" type="password"
-                                        required="" placeholder="Password">
+                                        placeholder="Password">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input id="password_confirmation" name="password_confirmation" class="form-control"
-                                        type="password" required="" placeholder="Password Confirmation">
+                                        type="password" placeholder="Password Confirmation">
                                 </div>
                             </div>
 
