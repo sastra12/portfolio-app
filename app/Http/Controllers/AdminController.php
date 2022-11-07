@@ -56,9 +56,11 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('admin.admin_edit_profile', compact('user'));
     }
 
     /**

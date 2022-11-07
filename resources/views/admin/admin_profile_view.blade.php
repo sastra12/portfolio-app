@@ -29,7 +29,7 @@
                     </li>
                 </ul>
 
-                <a href="" class="btn btn-primary btn-block"><b>Edit</b></a>
+                <a href="{{ route('edit.profile') }}" class="btn btn-primary btn-block"><b>Edit</b></a>
             </div>
             <!-- /.box-body -->
         </div>

@@ -23,6 +23,8 @@ Route::post('/admin/logout', [AdminController::class, 'logout'])
     ->name('admin.logout');
 Route::get('/admin/profile', [AdminController::class, 'profile'])
     ->name('admin.profile');
+Route::get('/edit/profile', [AdminController::class, 'edit'])
+    ->name('edit.profile');
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
