@@ -1,99 +1,65 @@
-<header id="page-topbar">
-    <div class="navbar-header">
-        <div class="d-flex">
-            <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-dark" height="20">
-                    </span>
-                </a>
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
 
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="logo-light" height="20">
-                    </span>
-                </a>
-            </div>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="user-image"
+                            alt="User Image">
+                        <span class="hidden-xs">Alexander Pierce</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="img-circle"
+                                alt="User Image">
 
-            <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
-                <i class="ri-menu-2-line align-middle"></i>
-            </button>
-
-            <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <span class="ri-search-line"></span>
-                </div>
-            </form>
-        </div>
-
-        <div class="d-flex">
-
-            <div class="dropdown d-inline-block d-lg-none ms-2">
-                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="ri-search-line"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                    aria-labelledby="page-header-search-dropdown">
-
-                    <form class="p-3">
-                        <div class="mb-3 m-0">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search ...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit"><i
-                                            class="ri-search-line"></i></button>
+                            <p>
+                                Alexander Pierce - Web Developer
+                                <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Followers</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Sales</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Friends</a>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="dropdown d-none d-lg-inline-block ms-1">
-                <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                    <i class="ri-fullscreen-line"></i>
-                </button>
-            </div>
-
-            <div class="dropdown d-inline-block user-dropdown">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user"
-                        src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1">Julia</span>
-                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <a class="dropdown-item" href="{{ route('admin.profile') }}"><i
-                            class="ri-user-line align-middle me-1"></i>
-                        Profile</a>
-                    <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle me-1"></i> My
-                        Wallet</a>
-                    <a class="dropdown-item d-block" href="#"><span
-                            class="badge bg-success float-end mt-1">11</span><i
-                            class="ri-settings-2-line align-middle me-1"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i>
-                        Lock screen</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"
-                        onclick="document.getElementById('logout-form').submit()"><i
-                            class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
-                </div>
-            </div>
+                            <!-- /.row -->
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="{{ route('admin.profile') }}" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </div>
-    <form action="{{ route('admin.logout') }}" method="POST" id="logout-form" style="display: none">
-        @csrf
-    </form>
+    </nav>
 </header>

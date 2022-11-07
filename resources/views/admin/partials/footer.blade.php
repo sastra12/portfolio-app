@@ -1,16 +1,7 @@
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> © Upcube.
-            </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                </div>
-            </div>
-        </div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.4.18
     </div>
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+    reserved.
 </footer>
