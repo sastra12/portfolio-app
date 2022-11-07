@@ -34,7 +34,8 @@
                         <input type="file" class="form-control" name="profile_image" id="profile_image">
                     </div>
                     <div class="form-group">
-                        <img src="{{ asset('backend/dist/img/user4-128x128.jpg') }}" alt="">
+                        <img src="{{ asset('backend/dist/img/user4-128x128.jpg') }}" alt="" id="showImage"
+                            style="width:200px; height:200px;">
                     </div>
                 </div>
                 <!-- /.box-body -->
@@ -47,3 +48,17 @@
         <!-- /.box -->
     </div>
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function() {
+            $('#profile_image').change(function(e) {
+                var reader = new FileReader()
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0'])
+            })
+        })
+    </script>
+@endpush
