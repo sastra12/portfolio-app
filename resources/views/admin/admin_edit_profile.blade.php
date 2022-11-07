@@ -13,11 +13,13 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="POST" enctype="multipart/form-data" action="{{ route('store.profile') }}">
+                @csrf
                 <div class="box-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{ $user->name }}">
+                        <input type="text" class="form-control" name="name" id="name"
+                            value="{{ $user->name }}">
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>

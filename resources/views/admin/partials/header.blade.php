@@ -54,7 +54,8 @@
                                 <a href="{{ route('admin.profile') }}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="#" class="btn btn-default btn-flat"
+                                    onclick="document.getElementById('logout-form').submit()">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -62,4 +63,7 @@
             </ul>
         </div>
     </nav>
+    <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
+        @csrf
+    </form>
 </header>
