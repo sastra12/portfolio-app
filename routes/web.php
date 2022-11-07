@@ -18,9 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route Admin
 Route::post('/admin/logout', [AdminController::class, 'logout'])
     ->name('admin.logout');
-
+Route::get('/profile', [AdminController::class, 'profile'])
+    ->name('admin.profile');
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
