@@ -36,8 +36,10 @@
                         <input type="file" class="form-control" name="profile_image" id="profile_image">
                     </div>
                     <div class="form-group">
-                        <img src="{{ asset('backend/dist/img/user4-128x128.jpg') }}" alt="" id="showImage"
-                            style="width:200px; height:200px;">
+                        <img src=" {{ !empty($user->profile_image)
+                            ? url('upload/admin_image/' . $user->profile_image)
+                            : url('upload/no_image.jpg') }}"
+                            alt="" id="showImage" style="width:200px; height:200px;">
                     </div>
                 </div>
                 <!-- /.box-body -->

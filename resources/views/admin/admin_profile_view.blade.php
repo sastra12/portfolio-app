@@ -6,12 +6,15 @@
 
 @section('content')
     <div class="col-md-6">
-
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <img class="profile-user-img img-responsive img-circle"
-                    src="{{ asset('backend/dist/img/user4-128x128.jpg') }}" alt="User profile picture">
+                <img class="profile-user-img img-responsive"
+                    src="
+                {{ !empty($user->profile_image)
+                    ? url('upload/admin_image/' . $user->profile_image)
+                    : url('upload/no_image.jpg') }}"
+                    alt="User profile picture">
 
                 {{-- <h3 class="profile-username text-center">Nina Mcintire</h3> --}}
 

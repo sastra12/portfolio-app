@@ -13,14 +13,21 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
 
+        @php
+            $id = Auth::user()->id;
+            $user = App\Models\User::find($id);
+        @endphp
+
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="user-image"
-                            alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src=" {{ !empty($user->profile_image)
+                            ? url('upload/admin_image/' . $user->profile_image)
+                            : url('upload/no_image.jpg') }}"
+                            class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{ $user->name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
