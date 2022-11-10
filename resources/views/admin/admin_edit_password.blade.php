@@ -11,9 +11,18 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Edit Password</h3>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" enctype="multipart/form-data" action="{{ route('store.profile') }}">
+            <form role="form" method="POST" action="{{ route('update.password') }}">
                 @csrf
                 <div class="box-body">
                     <div class="form-group">

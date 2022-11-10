@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function () {
         ->name('store.profile');
     Route::get('/edit/password', [AdminController::class, 'editpassword'])
         ->name('edit.password');
+    Route::post('/update/password', [AdminController::class, 'updatepassword'])
+        ->name('update.password');
 });
 
 Route::get('/dashboard', function () {
