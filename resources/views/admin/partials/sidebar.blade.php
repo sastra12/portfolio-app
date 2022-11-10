@@ -82,7 +82,8 @@
             </li>
             </li>
             <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+            <li><a href="{{ route('edit.password') }}"><i class="fa fa-circle-o text-red"></i> <span>Change
+                        Password</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
         </ul>
     </section>

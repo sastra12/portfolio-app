@@ -19,14 +19,19 @@ Route::get('/', function () {
 });
 
 // Route Admin
-Route::post('/admin/logout', [AdminController::class, 'logout'])
-    ->name('admin.logout');
-Route::get('/admin/profile', [AdminController::class, 'profile'])
-    ->name('admin.profile');
-Route::get('/edit/profile', [AdminController::class, 'edit'])
-    ->name('edit.profile');
-Route::post('/store/profile', [AdminController::class, 'store'])
-    ->name('store.profile');
+Route::middleware(['auth'])->group(function () {
+    Route::post('/admin/logout', [AdminController::class, 'logout'])
+        ->name('admin.logout');
+    Route::get('/admin/profile', [AdminController::class, 'profile'])
+        ->name('admin.profile');
+    Route::get('/edit/profile', [AdminController::class, 'edit'])
+        ->name('edit.profile');
+    Route::post('/store/profile', [AdminController::class, 'store'])
+        ->name('store.profile');
+    Route::get('/edit/password', [AdminController::class, 'editpassword'])
+        ->name('edit.password');
+});
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');

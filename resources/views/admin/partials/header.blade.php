@@ -23,7 +23,7 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src=" {{ !empty($user->profile_image)
+                        <img src="{{ !empty($user->profile_image)
                             ? url('upload/admin_image/' . $user->profile_image)
                             : url('upload/no_image.jpg') }}"
                             class="user-image" alt="User Image">
@@ -32,12 +32,14 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="img-circle"
-                                alt="User Image">
+                            <img src="{{ !empty($user->profile_image)
+                                ? url('upload/admin_image/' . $user->profile_image)
+                                : url('upload/no_image.jpg') }}"
+                                class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                {{ $user->name }}
+                                {{-- <small>Member since Nov. 2012</small> --}}
                             </p>
                         </li>
                         <!-- Menu Body -->
