@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('frontend.index');
 });
 
-// Route Admin
+// Route All Admin
 Route::middleware(['auth'])->group(function () {
     Route::post('/admin/logout', [AdminController::class, 'logout'])
         ->name('admin.logout');

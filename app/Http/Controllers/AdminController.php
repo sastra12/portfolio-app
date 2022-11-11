@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -19,6 +20,7 @@ class AdminController extends Controller
         $user->email = $request->email;
 
         if ($request->file('profile_image')) {
+            File::delete(public_path('upload/admin_image/' . $user->profile_image));
             $file = $request->file('profile_image');
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('upload/admin_image'), $filename);
