@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\HomeSliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,9 @@ Route::get('/', function () {
     return view('frontend.index');
 });
 
-// Route All Admin
+
 Route::middleware(['auth'])->group(function () {
+    // Route All Admin
     Route::post('/admin/logout', [AdminController::class, 'logout'])
         ->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'profile'])
@@ -32,7 +34,13 @@ Route::middleware(['auth'])->group(function () {
         ->name('edit.password');
     Route::post('/update/password', [AdminController::class, 'updatepassword'])
         ->name('update.password');
+
+    // Route Home Slider Setup
+    Route::get('/home/slide', [HomeSliderController::class, 'HomeSlider'])
+        ->name('home.slide');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');
