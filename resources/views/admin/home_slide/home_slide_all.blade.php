@@ -13,8 +13,10 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" enctype="multipart/form-data" action="{{ route('store.profile') }}">
+            <form role="form" method="POST" enctype="multipart/form-data"
+                action="{{ route('update.slider', ['id' => 1]) }}">
                 @csrf
+                <input type="hidden" name="id" value="{{ $data->id }}">
                 <div class="box-body">
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -54,7 +56,7 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#profile_image').change(function(e) {
+            $('#home_slide').change(function(e) {
                 var reader = new FileReader()
                 reader.onload = function(e) {
                     $('#showImage').attr('src', e.target.result);

@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
     // Route Home Slider Setup
     Route::get('/home/slide', [HomeSliderController::class, 'HomeSlider'])
         ->name('home.slide');
+    Route::post('/update/slider', [HomeSliderController::class, 'UpdateSlider'])
+        ->name('update.slider');
 });
 
 
