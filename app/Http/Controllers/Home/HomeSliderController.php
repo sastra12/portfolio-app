@@ -20,14 +20,13 @@ class HomeSliderController extends Controller
     public function UpdateSlider(Request $request)
     {
         $homeSlide = HomeSlide::find($request->id);
-        $slide_id = $request->id;
         if ($request->hasFile('home_slide')) {
             File::delete(public_path('upload/home_slide/' . $homeSlide->home_slide));
             $image = $request->file('home_slide');
             $name_generate = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             Image::make($image)->resize(636, 852)->save('upload/home_slide/' . $name_generate);
 
-            HomeSlide::findOrFail($slide_id)->update([
+            HomeSlide::findOrFail($homeSlide->id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
                 'video_url' => $request->video_url,
@@ -40,7 +39,7 @@ class HomeSliderController extends Controller
             );
             return redirect()->back()->with($notification);
         } else {
-            HomeSlide::findOrFail($slide_id)->update([
+            HomeSlide::findOrFail($homeSlide->id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
                 'video_url' => $request->video_url,

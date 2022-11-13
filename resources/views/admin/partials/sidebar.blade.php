@@ -42,14 +42,14 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-pie-chart"></i>
-                    <span>Home Slide Setup</span>
+                    <span>Menu Setup</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('home.slide') }}"><i class="fa fa-circle-o"></i>Home Slide</a></li>
-                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                    <li><a href="{{ route('about.page') }}"><i class="fa fa-circle-o"></i>About Page Setup</a></li>
                     <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                     <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a>
                     </li>

@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 
 @section('title')
-    Edit Home Slide
+    Edit About Setup
 @endsection
 
 @section('content')
@@ -9,12 +9,11 @@
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Home Slide Page</h3>
+                <h3 class="box-title">About Page Setupr</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" enctype="multipart/form-data"
-                action="{{ route('update.slider', ['id' => 1]) }}">
+            <form role="form" method="POST" enctype="multipart/form-data" action="{{ route('update.about', ['id' => 1]) }}">
                 @csrf
                 <input type="hidden" name="id" value="{{ $data->id }}">
                 <div class="box-body">
@@ -29,16 +28,24 @@
                             value="{{ $data->short_title }}">
                     </div>
                     <div class="form-group">
-                        <label for="video_url">Video URL</label>
-                        <input type="video_url" class="form-control" name="video_url" id="video_url"
-                            value="{{ $data->video_url }}">
+                        <label>Short Description</label>
+                        <textarea class="form-control" rows="7" name="short_desc">{{ $data->short_desc }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="home_slide">Slide Image</label>
-                        <input type="file" class="form-control" name="home_slide" id="home_slide">
+                        <label>Long Description</label>
+                        <div class="box">
+                            <div class="box-body pad">
+                                <textarea name="long_desc" class="textarea"
+                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $data->long_description }}</textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <img src=" {{ !empty($data->home_slide) ? url('upload/home_slide/' . $data->home_slide) : url('upload/no_image.jpg') }}"
+                        <label for="about_image">About Image</label>
+                        <input type="file" class="form-control" name="about_image" id="image">
+                    </div>
+                    <div class="form-group">
+                        <img src=" {{ !empty($data->abput_image) ? url('upload/home_slide/' . $data->anput_image) : url('upload/no_image.jpg') }}"
                             alt="" id="showImage" style="width:200px; height:200px;">
                     </div>
                 </div>
@@ -56,7 +63,7 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#home_slide').change(function(e) {
+            $('#image').change(function(e) {
                 var reader = new FileReader()
                 reader.onload = function(e) {
                     $('#showImage').attr('src', e.target.result);
